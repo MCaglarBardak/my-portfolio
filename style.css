@@ -12,7 +12,7 @@
 }
 
 :root{
-    --bg-color:#373A40 ;
+    --bg-color:#080808 ;
     --second-bg-color: #131313;
     --text-color:#fff;
     --main-color:#FF8225;
@@ -79,7 +79,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 4rem 12% 4rem;
+    padding: 3rem 12% 3rem;
     background-color: rgba(0, 0, 0, 3);
     backdrop-filter: blur(10px);
     display: flex;
@@ -87,10 +87,12 @@ section {
     align-items: center;
     z-index: 5;
 }
-.logo{
-    font-size: 3rem;
-    color: var(--text-color);
-    font-weight: 800;
+.logo {
+    display: flex;
+    flex-direction: column; /* h4'ü img'nin altına alır */
+    align-items: center; /* İçeriği ortalar */
+    gap: 2px; /* Görsel ve h4 arasında boşluk */
+    font-weight: 500;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -98,11 +100,26 @@ section {
 .logo:hover {
     transform: scale(1.1);
 }
-.logo span{
-    box-shadow: 0 0 10px var(--main-color);
-    border-radius: 15px;
-    padding: 5px;
 
+.logo img {
+    width: 80px;
+    height: 80px;
+}
+
+.logo h4 {
+    padding: 0;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 2rem;
+    text-align: center; /* h4 içeriğini ortalar */
+    margin-top: 0.5rem; /* Görselle h4 arasında boşluk */
+}
+
+.logo h4 span {
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    box-shadow: 0 0 15px var(--main-color);
 }
 .navbar a{
     font-size: 1.8rem;
@@ -169,9 +186,6 @@ section {
     justify-content: center;
     align-items: center;
     gap: 15rem;
-    background: url("pexels.jpg") no-repeat;
-    background-size:cover ;
-    background-position: center;
 }
 .home-content {
     display: flex;
@@ -638,29 +652,27 @@ input[type="number"] {
 /*FOOTER END*/
 
 /*MEDIA QUERIES START */
-@media(max-width:1285px) {
+@media(max-width: 1285px) {
     body{
-     
+        /* Gerekirse düzenleme yapabiliriz */
     }
     html{
         font-size: 55%;
     }
     .services-container{
         padding-bottom: 7rem;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         margin: 0 5rem;
-    
     }
 }
+
 @media(max-width: 991px) {
     header{
         padding: 3rem 3%;
     }
-    
     section{
         padding: 10rem 3% 2rem;
     }
-
     .timeline-items::before{
         left: 7px;
     }
@@ -672,24 +684,28 @@ input[type="number"] {
     .timeline-item:nth-child(even){
         padding-left: 37px;
         margin: 0%;
-
     }
     .timeline-dot{
         left: 0;
     }
-
-  .contact form{
-    flex-direction: column;
-  }
-  .footer{
-    padding: 2rem 3%;
-  }
+    .contact form{
+        flex-direction: column;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
 }
 
 @media(max-width: 895px) {
     #menu-item {
         display: block;
         cursor: pointer;
+    }
+    .home-img img {
+        width: 70vw; /* Görselin genişliğini ayarladık */
+        height: auto; /* Oranını koruyarak yükseklik ayarı */
+        margin: 0 auto; /* Görseli ortaladık */
+        margin-top: 5rem;
     }
     .navbar{
         position: absolute;
@@ -734,7 +750,7 @@ input[type="number"] {
         margin-bottom: 3rem;
     }
     .services-container{
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -746,6 +762,13 @@ input[type="number"] {
         gap: 5rem;
         width: 100%;
         margin: 0;
+    }
+
+    .home-img img {
+        width: 80vw; /* Görselin genişliğini mobil ekran genişliğine göre ayarladık */
+        height: auto; /* Oranını koruyarak yükseklik ayarı */
+        margin: 0 auto; /* Görseli ortaladık */
+        margin-top: 5rem;
     }
     .home-content h1 {
         font-size: 5rem;
@@ -772,7 +795,7 @@ input[type="number"] {
     .home-content p {
         font-size: 2rem;
     }
-    .home-content .social-items,.btn-group{
+    .home-content .social-items, .btn-group{
         margin: 0 auto;
     }
     .home-content .social-items a {
@@ -781,6 +804,26 @@ input[type="number"] {
     }
     .home-content .btn-group .btn {
         font-size: 2rem;
+    }
+    .logo {
+        flex-direction: column; /* Mobilde h4'ü altına al */
+        align-items: center; /* Tüm içeriği ortala */
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo h4 {
+        font-size: 1rem;
+        text-align: center; /* H4'ü ortaladık */
+        margin-top: 0.5rem; /* Görselle h4 arasında boşluk */
+    }
+
+    .logo h4 span {
+        font-size: 1rem;
+        box-shadow: none;
     }
     .education{
         width: 100%;
@@ -791,6 +834,25 @@ input[type="number"] {
     h2.heading{
         font-size: 4.5rem !important;
     }
+
+    .language-selector {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .language-selector button {
+        width: 100%;
+        justify-content: center;
+        padding: 4px 5px;
+        font-size: 12px;
+    }
+
+    .flag-icon, .language-selector img {
+        width: 12px;
+        height: 8px;
+    }
+
     .services-container {
         margin: 0;
     }
@@ -805,10 +867,39 @@ input[type="number"] {
         font-size: 1.7rem;
         line-height: 1;
     }
+    .contact {
+        padding: 1rem;
+    }
 
+    .contact form {
+        gap: 3rem;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .input-box {
+        gap: 1rem;
+    }
+
+    .input-box input,
+    .input-box textarea {
+        width: 100%;
+        padding: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .input-box textarea {
+        height: 180px;
+    }
+
+    .btn {
+        margin-top: 1.5rem;
+        padding: 1rem 2rem;
+        font-size: 2.2rem;
+    }
 }
 
-@media screen and (min-width: 769px) and (max-width:1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     .navbara {
         font-size: 1.5rem;
     }
@@ -823,10 +914,10 @@ input[type="number"] {
         font-size: 2.4rem;
     }
     .services-container{
-    margin: 0;
+        margin: 0;
     }
     .service-info{
-        padding: 0rem 2 rem;
+        padding: 0rem 2rem;
     }
     .service-info h4{
         line-height: 1;
@@ -836,22 +927,18 @@ input[type="number"] {
         font-size: 1.6rem;
         line-height: 1;
     }
-
-    @media screen and (min-width: 1025px) {
-        .home-content h1 {
-            font-size: 5rem;
-        }
-        .home-content p {
-            font-size: 1.8rem;
-            margin: 0;
-        }
-        .home-content h3{
-            font-size: 2.5rem;
-        }
-        
-    }
-    
 }
 
-
+@media screen and (min-width: 1025px) {
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-content p {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+    .home-content h3{
+        font-size: 2.5rem;
+    }
+}
 /*MEDIA QUERIES END */
