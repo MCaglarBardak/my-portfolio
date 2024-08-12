@@ -113,13 +113,20 @@ section {
     font-size: 2rem;
     text-align: center; /* h4 içeriğini ortalar */
     margin-top: 0.5rem; /* Görselle h4 arasında boşluk */
+    display: flex; /* Flexbox kullanarak ortalama */
+    align-items: center; /* Dikeyde ortalama */
+    justify-content: center; /* Yatayda ortalama */
 }
+
 
 .logo h4 span {
     color: var(--main-color);
     border: 2px solid var(--main-color);
-    border-radius: 5px;
+    border-radius: 8px;
+    margin-left:5px ;
     box-shadow: 0 0 15px var(--main-color);
+    display: inline-block; /* Border ve metni kontrol edilebilir yapar */
+    padding: 0.2rem 0.5rem; /* İç boşlukları ayarlayarak ortalamayı destekler */
 }
 .navbar a{
     font-size: 1.8rem;
