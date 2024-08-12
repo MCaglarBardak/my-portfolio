@@ -89,45 +89,32 @@ section {
 }
 .logo {
     display: flex;
-    flex-direction: column; /* h4'ü img'nin altına alır */
+    flex-direction: column; /* h5'ü img'nin altına alır */
     align-items: center; /* İçeriği ortalar */
-    gap: 2px; /* Görsel ve h4 arasında boşluk */
+    gap: 2px; /* Görsel ve h5 arasında boşluk */
     font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
 }
 
-.logo:hover {
-    transform: scale(1.1);
-}
 
 .logo img {
     width: 80px;
     height: 80px;
 }
 
-.logo h4 {
+.logo h5 {
     padding: 0;
     margin: 0;
     color: var(--text-color);
-    font-size: 2rem;
-    text-align: center; /* h4 içeriğini ortalar */
-    margin-top: 0.5rem; /* Görselle h4 arasında boşluk */
+    font-size: 1rem;
+    text-align: center; /* h5 içeriğini ortalar */
+    margin-top: 0.5rem; /* Görselle h5 arasında boşluk */
     display: flex; /* Flexbox kullanarak ortalama */
     align-items: center; /* Dikeyde ortalama */
     justify-content: center; /* Yatayda ortalama */
 }
 
 
-.logo h4 span {
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    border-radius: 8px;
-    margin-left:5px ;
-    box-shadow: 0 0 15px var(--main-color);
-    display: inline-block; /* Border ve metni kontrol edilebilir yapar */
-    padding: 0.2rem 0.5rem; /* İç boşlukları ayarlayarak ortalamayı destekler */
-}
+
 .navbar a{
     font-size: 1.8rem;
     color: var(--text-color);
@@ -483,7 +470,7 @@ section {
     align-items: baseline;
     padding: 5rem 5rem;
 }
-.service-info h4{
+.service-info h5{
     font-size: 3rem;
     font-weight: 800;
     line-height: 2;
@@ -712,7 +699,7 @@ input[type="number"] {
         width: 70vw; /* Görselin genişliğini ayarladık */
         height: auto; /* Oranını koruyarak yükseklik ayarı */
         margin: 0 auto; /* Görseli ortaladık */
-        margin-top: 5rem;
+        margin-top: 7rem;
     }
     .navbar{
         position: absolute;
@@ -775,7 +762,7 @@ input[type="number"] {
         width: 80vw; /* Görselin genişliğini mobil ekran genişliğine göre ayarladık */
         height: auto; /* Oranını koruyarak yükseklik ayarı */
         margin: 0 auto; /* Görseli ortaladık */
-        margin-top: 5rem;
+        margin-top: 7rem;
     }
     .home-content h1 {
         font-size: 5rem;
@@ -813,7 +800,7 @@ input[type="number"] {
         font-size: 2rem;
     }
     .logo {
-        flex-direction: column; /* Mobilde h4'ü altına al */
+        flex-direction: column; /* Mobilde h5'ü altına al */
         align-items: center; /* Tüm içeriği ortala */
     }
 
@@ -822,16 +809,13 @@ input[type="number"] {
         height: 80px;
     }
 
-    .logo h4 {
+    .logo h5 {
         font-size: 1rem;
-        text-align: center; /* H4'ü ortaladık */
-        margin-top: 0.5rem; /* Görselle h4 arasında boşluk */
+        text-align: center; /* h5'ü ortaladık */
+        margin-top: 0.5rem; /* Görselle h5 arasında boşluk */
     }
 
-    .logo h4 span {
-        font-size: 1rem;
-        box-shadow: none;
-    }
+ 
     .education{
         width: 100%;
     }
@@ -866,7 +850,7 @@ input[type="number"] {
     .service-info{
         padding: 0rem 2rem;
     }
-    .service-info h4{
+    .service-info h5{
         line-height: 1;
         margin-bottom: 14px;
     }
@@ -926,7 +910,7 @@ input[type="number"] {
     .service-info{
         padding: 0rem 2rem;
     }
-    .service-info h4{
+    .service-info h5{
         line-height: 1;
         margin-bottom: 14px;
     }
