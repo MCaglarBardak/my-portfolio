@@ -127,28 +127,25 @@ function updateFormValidationMessages(lang) {
 }
 
 // Scroll to top işlevi
-function scrollToTopSmooth() {
-    const duration = 1000;
-    const start = window.scrollY;
-    const startTime = performance.now();
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-    function scroll(timestamp) {
-        const elapsed = timestamp - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const scrollAmount = start * (1 - easeInOutQuad(progress));
-        window.scrollTo(0, scrollAmount);
-
-        if (progress < 1) {
-            requestAnimationFrame(scroll);
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
         }
-    }
+    });
 
-    function easeInOutQuad(t) {
-        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
 
-    requestAnimationFrame(scroll);
-}
 
 function validateInput(fieldId) {
     const input = document.getElementById(fieldId);
