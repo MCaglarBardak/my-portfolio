@@ -179,3 +179,14 @@ function validateForm() {
 
     return nameValid && emailValid && messageValid;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuIcon = document.getElementById("menu-item");
+  const navbar = document.querySelector(".navbar");
+
+  menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+    menuIcon.classList.toggle("bx-x");
+    menuIcon.classList.toggle("bx-menu"); // Aç-kapa ikonu dönüşsün
+  });
+});
